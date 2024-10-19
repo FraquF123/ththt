@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=393, height=852, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TriForce</title>
+    <style>
+        @font-face {
+            font-family: 'custom';
+            src: url('Inter2.ttf') format('truetype');
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'custom', sans-serif;
+            background-image: url('10.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+        .title {
+            font-size: 70px;
+            color: #ffffff;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            width: 90%;
+            display: flex;
+            margin-left: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 40px;
+            border: 1px solid #000;
+            border-radius: 40px;
+            outline: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+        }
+        .search-bar img {
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #1539A3;
+            color: white;
+            font-family: 'custom', sans-serif;
+            border-radius: 40px;
+            border: 2px solid #1539A3;
+            cursor: pointer;
+            margin-left: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+        }
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+        .rounded-button {
+            border-radius: 40px;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+        }
+        .rounded-button-green {
+            background-color: #0040FF;
+            color: white;
+            font-family: 'custom', sans-serif;
+            border: 2px solid white;
+        }
+        .top-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+        .top-buttons button {
+            width: 152px;
+            height: 29px;
+            font-family: 'custom', sans-serif;
+            border: 1px solid #000;
+            border-radius: 40px;
+            background-color: white;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+        }
+        .top-buttons button:hover {
+            background-color: #ccc;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            color: #ffffff;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+            font-weight: bold;
+        }
+        .text-block {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000000;
+            width: 254px;
+            margin-left: 80px;
+            height: 130px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+            margin-top: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">TF</div>
+    <div class="top-buttons">
+        <button onclick="window.location.href='register.html'">зарегистрироваться</button>
+        <button onclick="window.location.href='login.html'">войти</button>
+    </div>
+    <div class="container">
+        <div class="title">TriForce</div>
+        <div class="search-bar">
+            <img src="1.png" alt="Лупа">
+            <input type="text" id="searchInput" placeholder="найди фрилансера своей мечты">
+            <button onclick="performSearch()">найти</button>
+        </div>
+        <div class="button-container">
+            <button class="rounded-button rounded-button-green" onclick="redirectToResume()">создать резюме</button>
+            <button class="rounded-button rounded-button-green" onclick="redirectToResumes()">поиск сотрудников</button>
+        </div>
+        <div class="text-block">
+            «Работа, выполненная с удовольствием, позволяет достичь совершенства» - Аристотель.
+        </div>
+    </div>
+    <script>
+        function performSearch() {
+            const query = document.getElementById('searchInput').value;
+            window.location.href = `vakan.html?q=${encodeURIComponent(query)}`;
+        }
+
+        function redirectToResume() {
+            window.location.href = 'resume.html';
+        }
+
+        function redirectToResumes() {
+            window.location.href = 'resumes.html';
+        }
+    </script>
+</body>
+</html>
